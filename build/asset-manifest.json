@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/list-form/build/static/css/main.f1226403.chunk.css",
+    "main.js": "/list-form/build/static/js/main.56ab8d7a.chunk.js",
+    "main.js.map": "/list-form/build/static/js/main.56ab8d7a.chunk.js.map",
+    "runtime-main.js": "/list-form/build/static/js/runtime-main.f14f127d.js",
+    "runtime-main.js.map": "/list-form/build/static/js/runtime-main.f14f127d.js.map",
+    "static/js/2.1b564e2f.chunk.js": "/list-form/build/static/js/2.1b564e2f.chunk.js",
+    "static/js/2.1b564e2f.chunk.js.map": "/list-form/build/static/js/2.1b564e2f.chunk.js.map",
+    "index.html": "/list-form/build/index.html",
+    "precache-manifest.ea2c0e614fe5de8fce1ed499dba42a8b.js": "/list-form/build/precache-manifest.ea2c0e614fe5de8fce1ed499dba42a8b.js",
+    "service-worker.js": "/list-form/build/service-worker.js",
+    "static/css/main.f1226403.chunk.css.map": "/list-form/build/static/css/main.f1226403.chunk.css.map",
+    "static/js/2.1b564e2f.chunk.js.LICENSE.txt": "/list-form/build/static/js/2.1b564e2f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f14f127d.js",
+    "static/js/2.1b564e2f.chunk.js",
+    "static/css/main.f1226403.chunk.css",
+    "static/js/main.56ab8d7a.chunk.js"
+  ]
+}
