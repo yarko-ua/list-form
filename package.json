@@ -2,7 +2,7 @@
   "name": "form-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yarko-ua.github.io/list-form/build/",
+  "homepage": "https://yarko-ua.github.io/list-form/build",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
