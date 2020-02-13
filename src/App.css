@@ -1,3 +1,9 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,247 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#root {
+width: 100vw;
+height: 100vh;
+}
+
+
+.ToDoList {
+  width: 100%;
+  max-width: 460px;
+  height: fit-content;
+  margin: 50px auto;
+}
+
+.ToDoList h1 {
+  border-top-left-radius: 7px;
+  border-top-right-radius:7px ;
+  font-size: 30px;
+  text-align: center;
+  background-color: #303030;
+  color: #dddddd;
+}
+.ToDoList h1 + div {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius:7px ;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 2px dashed #909090;
+  background-color: #303030;
+  /* width: 100%;
+  min-width: 460px;
+   */
+  width: max-content;
+  height: max-content; 
+}
+.ToDoList ul {
+  width: fit-content;
+  margin: 0 auto;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 40px;
+  text-align: center;
+}
+.ToDoList li {
+  padding-left: 10px;
+  width: fit-content;
+min-height: 35px;
+margin: 0 auto;
+margin-bottom: 10px;
+border-radius: 7px;
+background-color: bisque;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+font-size: 18px;
+position: relative;
+transition: .5s linear;
+}
+.ToDoList .done {
+  background-color: #666666;
+  position: relative;
+}
+.ToDoList li:before{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color:  rgb(27, 201, 48) ;
+  position: absolute;
+  left: 10px;
+  top: 17px;
+  transition: .6s linear;
+}
+.ToDoList .done:before {
+  content: '';
+  width: 66%;
+  height: 2px;
+  background-color:  rgb(27, 201, 48) ;
+  position: absolute;
+  left: 10px;
+  top: 17px;
+  
+}
+
+.btn {
+width: 34px;
+height: 32px;
+border: 1px solid black;
+border-radius: 7px;
+cursor: pointer;
+}
+
+.btn-done {
+  background-color: seagreen;
+  margin-left: 150px;
+}
+
+.btn-delete {
+  background-color: red;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.ToDoList input {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  height: 30px;
+  width: 250px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+.ToDoList input:focus, .ToDoList input:hover {
+  box-shadow: inset 0px 0px 7px #303030;
+  font-style: italic;
+  font-weight: bold;
+}
+.btn-add {
+  height: 30px;
+  width: 60px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.btn-add:hover {
+  box-shadow: inset 0px 0px 7px #303030;
+}
+
+i {
+  font-size: 14px;
+  color: black;
+}
+.fas::before {
+  display: inline-block;
+  padding-top: 25%;
+
+}
+
+
+.LoginForm{
+  border-radius: 7px;
+  margin: 10px auto;
+  padding: 30px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 100%;
+  max-width: 460px;
+  height: fit-content;
+}
+
+.LoginForm h1 {
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.7;
+  text-transform: uppercase;
+  margin: 0px auto 30px;
+}
+
+form {
+  width: 100%;
+  text-align: center;
+}
+
+form input:not([type="checkbox"]) {
+  width: 100%;
+  max-width: 360px;
+  min-width: 200px;
+  height: 50px;
+  margin: 5px 0px;
+  padding-left: 10px;
+  background-color: #cbe0e9;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0px 0px 7px #888888;
+}
+
+input[type="checkbox"]{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #2e22d8;
+  color: #fff;
+}
+
+.checkBox {
+  width: 100%;
+  max-width: 360px;
+  min-width: 200px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 10px auto 35px;
+}
+
+form p {
+  background-color: red;
+  width: 100%;
+  max-width: 360px;
+  min-width: 200px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+
+button[type="submit"]{
+  width: 100%;
+  max-width: 360px;
+  min-width: 200px;
+  height: 45px;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #2e22d8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  transition: .7s linear;
+}
+
+button[type="submit"]:hover{
+  background-color:  #cbe0e9;
+  color: #2e22d8;
+}
+
+
+button[type="submit"]:disabled{
+  cursor: not-allowed;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
