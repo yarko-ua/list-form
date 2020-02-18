@@ -12,7 +12,7 @@ class Form extends React.Component {
             name: '',
             password: '',
             email: '',
-            checked: true,
+            checked: false,
             validation: false,
             errorName: '',
             errorPassword: '',
@@ -21,63 +21,58 @@ class Form extends React.Component {
     }
 
     handleSubmit(e) {
-        if (!this.state.name || this.state.name === ' ' ||
-            this.state.name.match(/\d+/)) {
-            this.setState({
-                validation: false
-            })
-        } else if (this.state.password === '' || this.state.password === ' ' ||
-            this.state.password.includes('{')) {
-            this.setState({
-                validation: false
-            })
-        } else if (this.state.checked === false) {
-            this.setState({
-                validation: false
-            })
-        } else if (this.state.email === '' || this.state.email === ' ' ||
-            !this.state.email.match(/^.+@.+\..+$/igm)) {
-            this.setState({
-                validation: false
-            })
-        } else {
-            this.setState({
-                validation: true
-            })
-        }
-        if (this.state.validation) alert(`You are awesome!`);
         e.preventDefault();
+        let validation;
+        if (!this.state.name || this.state.name === ' ') {
+            validation = false;
+        } else if (!this.state.password || this.state.password === ' ') {
+            validation = false;
+
+        } else if (!this.state.checked) {
+            validation = false;
+
+        } else if (!this.state.email || this.state.email === ' ') {
+            validation = false;
+        } else {
+            validation = true;
+        };
+
+        this.setState({ validation: validation })
+        if (validation) alert(`You are awesome!`);
+
     }
 
     handleName(e) {
-        this.setState({
-            name: e.target.value
-        })
-        if (this.state.name.match(/\d+/)) {
+        if (e.target.value.match(/\d+/)) {
             this.setState({
                 errorName: 'Numbers is forbidden',
-                validation: false,
+                name: '',
             })
-        } else if (!this.state.name.match(/\d+/)) {
-            this.setState({ errorName: '' })
+        } else if (!e.target.value.match(/\d+/)) {
+            this.setState({
+                errorName: '',
+                name: e.target.value
+            })
         };
-
-
     };
 
     handlePassword(e) {
         this.setState({
-            password: e.target.value
+
         })
-        if (this.state.password.includes('{')) {
+        if (e.target.value.includes('{')) {
             this.setState({
                 errorPassword: '\'{\' sign is forbidden',
-                validation: false,
+                password: ''
             })
-        } else if (!this.state.password.includes('/')) {
-            this.setState({ errorPassword: '' })
+        } else if (!e.target.value.includes('{')) {
+            this.setState({
+                errorPassword: '',
+                password: e.target.value
+            })
         };
-        console.log(this.state.password)
+        console.log(this.state.password);
+        console.log(e.target.value.length);
     };
 
     handleCheck(e) {
@@ -88,18 +83,17 @@ class Form extends React.Component {
     };
 
     handleMail(e) {
-        this.setState({
-            email: e.target.value
-        })
-        if (!this.state.email.match(/^.+@.+\..+$/igm)) {
+        if (!e.target.value.match(/^.+@.+\..+$/igm)) {
             this.setState({
                 errorMail: 'Not correct email',
-                validation: false,
+                email: ''
             })
-        } else if (!this.state.password.match(/^.+@.+\..+$/igm)) {
-            this.setState({ errorMail: '' })
+        } else if (e.target.value.match(/^.+@.+\..+$/igm)) {
+            this.setState({
+                errorMail: '',
+                email: e.target.value
+            })
         };
-
         console.log(this.state.email)
     };
 
@@ -122,7 +116,7 @@ class Form extends React.Component {
                 <div className="checkBox">
                     <input type="checkbox" name="checkbox" id="checkbox" onChange={this.handleCheck}
                         checked={this.state.checked} />
-                    <label for="checkbox">Keep me signed in</label>
+                    <label htmlFor="checkbox">Keep me signed in</label>
                 </div>
                 <button type="submit">SIGN IN</button>
             </form>
